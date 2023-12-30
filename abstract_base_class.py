@@ -1,6 +1,8 @@
-class GraphicShape:
+from abc import ABC, abstractmethod
+class GraphicShape(ABC):
     def __init__(self):
         super().__init__()
+    @abstractmethod
     def calArea(self):
         pass
 
@@ -18,7 +20,5 @@ circ = Circle(10.2)
 sq = Square(5)
 
 print(graphicShape)
-print(circ)
 print(circ.calArea())
-print(sq)
 print(sq.calArea())
