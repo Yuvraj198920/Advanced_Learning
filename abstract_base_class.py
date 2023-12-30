@@ -15,10 +15,8 @@ class Square(GraphicShape):
         self.sides = sides
 
 
-graphicShape = GraphicShape()
 circ = Circle(10.2)
 sq = Square(5)
 
-print(graphicShape)
 print(circ.calArea())
 print(sq.calArea())
