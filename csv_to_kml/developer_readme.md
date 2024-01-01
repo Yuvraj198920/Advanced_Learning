@@ -25,6 +25,27 @@ source venv/bin/activate
 Install all required dependencies by running the following command within the virtual environment:
 `pip install pandas simplekml tkinter PyInstaller
 `
+
+## CSV File Format Requirements
+The CSV to KML Converter Tool is designed to work with CSV files that adhere to a specific format. The expected structure of the CSV file is detailed below:
+### Required Columns
+The CSV file must contain the following columns:
+- `Latitude`: The latitude of the location (in decimal degrees).
+- `Longitude`: The longitude of the location (in decimal degrees).
+- `GPS Altitude (ft MSL)`: The altitude in feet above Mean Sea Level (MSL).
+- `Datetime (UTC)`: The timestamp in UTC, formatted as **`YYYY-MM-DDTHH:MM:SS.ssssss+00:00`**
+### Example CSV Structure
+```commandline
+Datetime (UTC),Latitude,Longitude,GPS Altitude (ft MSL),...
+2023-12-13T00:45:07.581272+00:00,37.534575,-122.331322,495.288729,...
+2023-12-13T00:45:07.700970+00:00,37.534577,-122.331323,496.811003,...
+...
+
+```
+***Note***: The CSV file can contain additional columns, but they will be ignored by the tool.
+### Handling CSV Files
+- Ensure the CSV file adheres to the above format for the tool to process it correctly.
+- The tool reads the CSV file in the order of the rows. Make sure that the data is sorted chronologically if the order of points matters for the KML file.
 ## Running the Script Locally
 To run the CSV to KML GUI application:
 `python gui_csv_to_kml.py`
