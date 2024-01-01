@@ -1,0 +1,5 @@
+geometry_crud_api/venv/
+*.toc
+*.pyc
+*.xml
+csv_to_kml/.idea/
